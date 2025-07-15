@@ -1,134 +1,171 @@
-/*This class defines the base attributes of the skin*/
+/*  nes.css
+    Custom nes CSS file for Gamepad Viewer
+    By: IPv6freely
+    Adapted from eseca's nes skins on Github
+    https://github.com/eseca/custom-gamepadviewer-skins
+
+    To use:
+    - Go to gamepadviewer.com
+    - Select Remap Buttons
+    - Map buttons as appropriate. L and R should be mapped to LB and RB
+    - Select Generate Custom URL
+    - Enter the URL to this CSS file into the Custom CSS URL field
+    - Copy and paste the URL
+    - In OBS, create a new Browser source. Paste the URL.
+    - Enjoy!
+
+
+/* Define base controller sizing */
 .controller.custom{
-        background: url(snes-assets/base.png); 
-    height: 526px;
-    width: 1043px;
+    background: url(nes.svg);
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 970px;
+    height: 424px;
+    margin-left: -485px;
+    margin-top: -212px;
 }
-.custom.disconnected { /* This class shows an image when the controller is disconnected */
-    background: url(ps3-assets/base-disconnect.png);
+.custom.disconnected {
+    background: url(nes.svg);
+    background-position: 0px -424px;
+    background-repeat: no-repeat;
 }
-/* This hides the controller's button when disconnected so only the background image remains */ 
 .custom.disconnected div {
     display: none;
 }
-.custom .triggers{ /* The triggers are housed inside a div, so this sizes the div properly and positions it */
-    width: 853px;
-    height: 69px;
+
+/* nes D-Pad */
+.custom .dpad{
     position: absolute;
-    left: 94px;
+    width: 146px;
+    height: 146px;
+    top: 142px;
+    left: 133px;
 }
-.custom .trigger{/* These are the actual triggers themselves */
-    width:248px;
-    height:69px;
-    background: url(snes-assets/Trigger.png);
-    opacity: 0;
+.custom .face{
+    position: absolute;
 }
-/* The left and right classes below are used to position the triggers
-within the div they're contained in. Since their positions is realtive
-to the size of the parent element, we simply resize the parent element 
-above to achieve the desired position. */
-.custom .trigger.left{ 
-    float: left;
+.custom .face.up, .custom .face.down{
+    width: 33.5px;
+    height: 34px;
 }
-.custom .trigger.right{
-    float: right;
+.custom .face.left, .custom .face.right{
+    width: 34px;
+    height: 33.5px;
+}
+.custom .face.up{
+    left: 56px;
+    top: 0;
+    background-position: 92px 0px;
+}
+.custom .face.down{
+    left: 56px;
+    top: 112px;
+    background-position: 131px 0;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+.custom .face.left{
+    top: 56px;
+    left: 0;
+    background-position: 0px 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.custom .face.right{
+    top: 56px;
+    right: 0px;
+    background-position: 53px 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.custom .face.pressed{
+    background: url(nes.svg);
+    background-position-x: -1323px;
 }
 
-/* This is to size and position the containing div for the 
-start and select buttons. */
+
+/* nes L and R Bumpers */
+.custom .bumpers{
+    width: 759px;
+    height: 34px;
+    position: absolute;
+    left: 104px;
+}
+.custom .bumper{
+    width: 211px;
+    height: 34px;
+    background: url(nes.svg);
+    background-position: -967px 0px;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+.custom .bumper.pressed{
+    opacity: 1;
+}
+.custom .bumper.left{
+    float: left;
+}
+.custom .bumper.right{
+    float: right;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+/*  nes Start and Select Buttons
+    SELECT = .back
+    START = .start
+*/
 .custom .arrows{
     position: absolute;
-    width: 187px;
-    height: 66px;
-    top: 306px;
-    left: 387px;
+    width: 176px;
+    height: 62px;
+    top: 214px;
+    left: 358px;
 }
-/* Setting the size and CSS sprite for the start adn select buttons */
 .custom .back, .custom .start{
-    background: url(snes-assets/Menus.png);
-    width: 74px;
-    height: 65px;
+    width: 71.5px;
+    height: 61.5px;
 }
 .custom .back.pressed, .custom .start.pressed{
-    background-position-y:-96px;
+    background: url(nes.svg);
+    background-position: -1177.5px 0px;
 }
 .custom .back{
     float: left;
-    width: 74px;
 }
 .custom .start{
     float: right;
-    width: 74px;
 }
-/* Positioning and size of the container for the face buttons */
+
+/* nes ABXY Buttons */
 .custom .abxy{
     position: absolute;
-    width: 275px;
-    height: 275px;
-    top: 190px;
-    left: 685px;
+    width: 259px;
+    height: 218px;
+    top: 105px;
+    left: 633px;
 }
-/* base class used to simplify the sprite mapping */
 .custom .button{
     position: absolute;
-    width:76px;
-    height:76px;
-    background: url(snes-assets/HighlightButton.png);
-     opacity: 0;
+    width:75px;
+    height:75px;
 }
 .custom .button.pressed{
-    opacity: 1;
-}
-.custom .a{
-    top: 155px;
-    left: 100px;
+    background: url(nes.svg);
+    background-position-x: -1249px;
 }
 .custom .b{
-    top: 78px;
+    top: 71px;
     right: 0px;
 }
-.custom .x{
-    top: 78px;
+.custom .a{
+    top: 143px;
+    left: 92px;
 }
 .custom .y{
-    left: 100px;
+    left: 92px;
 }
-/* Dpad possitioning and sizing */
-.custom .dpad{
-    position: absolute;
-    width: 140px;
-    height: 132px;
-    top: 220px;
-    left: 130px;
-}
-.custom .face{
-    background: url(snes-assets/dpad.png);
-    position: absolute;
-    opacity: 0;
-}
-.custom .face.left, .custom .face.right, .custom .face.up, .custom .face.down{
-    width: 42px;
-    height: 36px;
-}
-.custom .face.up{
-    left: 71px;
-    top: 10px;
-    background-position-x: -44px;
-}
-.custom .face.down{
-    left: 71px;
-    top: 130px;
-    background-position-x: -87px;
-}
-.custom .face.left{
-    top: 69px;
-    left: 10px;
-}
-.custom .face.right{
-    top: 69px;
-    left: 125px;
-    background-position-x: -122px;
-}
-.custom .face.pressed{
-    opacity: 1;
+.custom .x{
+    top: 71px;
 }
