@@ -5,7 +5,7 @@
     width: 1043px;
 }
 .custom.disconnected { /* This class shows an image when the controller is disconnected */
-    background: url(ps3-assets/base-disconnect.png);
+    background: url(snes-assets/base-disconnect.png);
 }
 /* This hides the controller's button when disconnected so only the background image remains */ 
 .custom.disconnected div {
