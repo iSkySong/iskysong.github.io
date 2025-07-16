@@ -163,10 +163,13 @@
 .custom .a{
     top: 143px;
     left: 92px;
+    opacity: 0.5;
 }
 .custom .y{
     left: 92px;
+    opacity: 0.5;
 }
 .custom .x{
     top: 71px;
+    opacity: 0.5;
 }
