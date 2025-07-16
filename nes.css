@@ -1,11 +1,11 @@
 /*This class defines the base attributes of the skin*/
 .controller.custom{
-        background: url(https://iskysong.github.io/NES/nes-assets/base.png);
+        background: url(https://iskysong.github.io/nes-assets/base.png);
     height: 526px;
     width: 1043px;
 }
 .custom.disconnected { /* This class shows an image when the controller is disconnected */
-    background: url(https://iskysong.github.io/NES/nes-assets/base_dc.png);
+    background: url(https://iskysong.github.io/nes-assets/base_dc.png);
 }
 /* This hides the controller's button when disconnected so only the background image remains */
 .custom.disconnected div {
@@ -23,7 +23,7 @@ start and select buttons. */
 }
 /* Setting the size and CSS sprite for the start adn select buttons */
 .custom .back, .custom .start{
-    background: url(https://iskysong.github.io/NES/nes-assets/Menus.png);
+    background: url(https://iskysong.github.io/nes-assets/Menus.png);
     width: 90px;
     height: 65px;
 }
@@ -55,7 +55,7 @@ start and select buttons. */
     position: absolute;
     width:99px;
     height:99px;
-    background: url(https://iskysong.github.io/NES/nes-assets/HighlightButton_R.png);
+    background: url(https://iskysong.github.io/nes-assets/HighlightButton_R.png);
      opacity: 0;
 }
 .custom .button.pressed{
@@ -86,7 +86,7 @@ start and select buttons. */
     left: 130px;
 }
 .custom .face{
-    background: url(https://iskysong.github.io/NES/nes-assets/dpad.png);
+    background: url(https://iskysong.github.io/nes-assets/dpad.png);
     position: absolute;
     opacity: 0;
 }
